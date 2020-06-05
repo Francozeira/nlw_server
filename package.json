@@ -4,8 +4,9 @@
   "description": "",
   "main": "./src/server.ts",
   "scripts": {
-    "dev": "ts-node src/server.ts",
-    "try": "nodemon src/server.ts"
+    "dev": "nodemon src/server.ts",
+    "migrate": "knex --knexfile knexfile.ts migrate:latest",
+    "seed": "knex --knexfile knexfile.ts seed:run"
   },
   "keywords": [],
   "author": "",
