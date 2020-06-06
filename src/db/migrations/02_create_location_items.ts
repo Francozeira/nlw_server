@@ -3,7 +3,7 @@ import Knex from 'knex'
 export async function up(knex: Knex) {
     return knex.schema.createTable('location_items', table => {
         table.increments('id').primary
-        table.integer('point_id')
+        table.integer('location_id')
             .notNullable()
             .references('id')
             .inTable('locations')
