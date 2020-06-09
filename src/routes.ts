@@ -7,6 +7,7 @@ const locationsControllers = new LocationsControllers()
 const itemsControllers = new ItemsControllers()
 
 router.get('/items', itemsControllers.index)
+router.get('/delete', itemsControllers.delete)
 router.get('/locations', locationsControllers.index)
 router.get('/locations/:id', locationsControllers.show)
 router.post('/locations', locationsControllers.create)

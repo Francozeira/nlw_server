@@ -1,20 +1,20 @@
-# TITULO MASTER
+# Ecoleta :recycle: :satellite: :purple_heart: :iphone: :computer:
 
-TITULO MASTER is a small one week FullStack developing project focused on the use of TypeScript, this is backend developed for this project, you can check the frontend application at [THIS ADDRESS](https://rocketseat.com.br/), assets were provided by [Rocketseat](https://rocketseat.com.br/).
+Ecoleta is a small project focused on bringing a experience of easy registering and searching for garbage collection locations registered via website or mobile app.
+
+This is a one week fullstack development project, composed of a web page, mobile app and web server with the use of TypeScript to create a Node.js in the backend, web page with React.js and React Native supported with Expo for the mobile app.
+
+This is the backend developed for this project, you can check the web frontend at [Ecoleta web](https://github.com/Francozeira/nlw_web) and mobile application at [Ecoleta mobile](https://github.com/Francozeira/nlw_mobo), finally, the assets were provided by [Rocketseat](https://rocketseat.com.br/).
 
 ## Project setup
 
-Make sure to install all dependecies and run the scripts below to run the application, on package.json file you can check all npm scripts used.
+Make sure to install all dependecies to run the application, on package.json file you can check all npm scripts used. Please note that this project was designed based on the use of Expo app to compile the project and run it on the go while developing.
+
+### Compiles for development
 
 ```
-knex --knexfile knexfile.ts migrate:latest
+npm start
 ```
-### Runs migrations and create DB tables
-
-```
-knex --knexfile knexfile.ts seed:run
-```
-### Insert seed files
 
 ------------
 

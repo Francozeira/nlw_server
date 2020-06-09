@@ -9,10 +9,16 @@ class ItemsControllers {
             return{
                 id: item.id,
                 title: item.title,
-                image_url: `http://localhost:3333/uploads/${item.image}`,
+                image_url: `http://localhost:3334/uploads/${item.image}`,
             }
         })
         return res.json({ serializedItems })
+    }
+    async delete (req: Request,res:Response) {
+        await knex.schema.dropTable('location_items')
+        await knex.schema.dropTable('locations')
+        await knex.schema.dropTable('items')
+        return res.json({ msg: 'ok' })
     }
 }
 
