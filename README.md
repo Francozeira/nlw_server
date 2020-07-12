@@ -4,13 +4,11 @@
 
 Ecoleta is a small project focused on bringing a experience of easy registering and searching for garbage collection locations registered via website or mobile app.
 
-<img src="./assets/web_home.png" />
+<img src="./assets/Component 1@2x.png" />
 
 This is a one week fullstack development project, composed of a web page, mobile app and web server with the use of TypeScript to create a Node.js in the backend, web page with React.js and React Native supported with Expo for the mobile app.
 
 This is the backend developed for this project, you can check the web frontend at [Ecoleta web](https://github.com/Francozeira/nlw_web) and mobile application at [Ecoleta mobile](https://github.com/Francozeira/nlw_mobo), finally, the assets were provided by [Rocketseat](https://rocketseat.com.br/).
-
-![Banner](https://user-images.githubusercontent.com/38081852/84095189-04178580-a9d5-11ea-9496-9ec6f6a282e5.png)
 
 A small list of tech characteristics and utils used in the project worth mentioning:
 
@@ -54,16 +52,6 @@ And that's basically it for starting the development of the project, pretty simp
 
 ## :art: Images
 
-<!-- Badges -->
-
-[node_version_badge]: https://img.shields.io/badge/node-12.17.0-green
-
-[web_react_badge]: https://img.shields.io/badge/web-react-blue
-
-[mobile_react-native_badge]: https://img.shields.io/badge/mobile-react%20native-blueviolet
-
-[server_nodejs_badge]: https://img.shields.io/badge/server-nodejs-important
-
 Image:
 
 ![](https://pandao.github.io/editor.md/examples/images/4.jpg)
@@ -79,3 +67,13 @@ Image:
 [![](https://pandao.github.io/editor.md/examples/images/7.jpg)](https://pandao.github.io/editor.md/examples/images/7.jpg "李健首张专辑《似水流年》封面")
 
 > 图为：李健首张专辑《似水流年》封面
+
+<!-- Badges -->
+
+[node_version_badge]: https://img.shields.io/badge/node-12.17.0-green
+
+[web_react_badge]: https://img.shields.io/badge/web-react-blue
+
+[mobile_react-native_badge]: https://img.shields.io/badge/mobile-react%20native-blueviolet
+
+[server_nodejs_badge]: https://img.shields.io/badge/server-nodejs-important

@@ -17,8 +17,14 @@ class LocationsController {
             .where('state', String(state) )
             .distinct()
             .select('locations.*')
-    
-        return res.json(locations)
+
+        const serializedLocations = locations.map(location => {
+            return {
+                ...location,
+                image_url: `http://192.168.1.3:3334/uploads/${location.image}`
+            }
+        })
+        return res.json(serializedLocations)
     }
     
     async show (req: Request,res:Response) {
@@ -26,14 +32,19 @@ class LocationsController {
         
         const location = await knex('locations').where('id', id).first()
 
-        if (!location) return res.status(400).json({messgae: 'Location not found'})
+        if (!location) return res.status(400).json({message: 'Location not found'})
         
+        const serializedLocation = {
+            ...location,
+            image_url: `http://192.168.1.3:3334/uploads/${location.image}`
+        }
+
         const items = await knex('items')
             .join('location_items','items.id','=','location_items.item_id')
             .where('location_items.location_id', id )
             .select('items.title')
         
-        return res.json({ location, items })
+        return res.json({ point: serializedLocation, items })
     }
 
     async create (req: Request,res:Response) {
@@ -42,7 +53,7 @@ class LocationsController {
         const trx = await knex.transaction()
 
         const location = {
-            image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60', 
+            image: req.file.filename, 
                 name, email, wpp, lat, long, city, state
         }
     
@@ -51,7 +62,8 @@ class LocationsController {
     
         const location_id = insertedIds[0]
     
-        const locationItems = items.map( (item_id: number) => {
+        const locationItems = items.split(',').map( (item: string) => Number(item.trim()))
+        .map( (item_id: number) => {
             return{
                 item_id,
                 location_id
