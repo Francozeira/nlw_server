@@ -21,7 +21,7 @@ class LocationsController {
         const serializedLocations = locations.map(location => {
             return {
                 ...location,
-                image_url: `http://192.168.1.3:3334/uploads/${location.image}`
+                image_url: `http://192.168.1.5:3334/uploads/${location.image}`
             }
         })
         return res.json(serializedLocations)
@@ -36,7 +36,7 @@ class LocationsController {
         
         const serializedLocation = {
             ...location,
-            image_url: `http://192.168.1.3:3334/uploads/${location.image}`
+            image_url: `http://192.168.1.5:3334/uploads/${location.image}`
         }
 
         const items = await knex('items')
@@ -44,7 +44,7 @@ class LocationsController {
             .where('location_items.location_id', id )
             .select('items.title')
         
-        return res.json({ point: serializedLocation, items })
+        return res.json({ location: serializedLocation, items })
     }
 
     async create (req: Request,res:Response) {
